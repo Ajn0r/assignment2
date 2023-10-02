@@ -13,18 +13,28 @@ namespace Assignment2
 
         public void Start()
         {
+            bool repeat = false;
             // Welcome the player and get some user information
             Introduce();
+            do
+            {
+                PredictMyDay();
 
-            // Start method
-            //PredictMyDay();
-            //CalculateStrengthLength();
-            //repeat = RunAgain();
+                //CalculateStrengthLength();
+                
+                // Check if user want to play again
+                repeat = RunAgain();
+            } while (repeat);
         }
         private bool RunAgain()
         {
+            Console.Write("Continue with another round? (y/n): ");
             // Method to decide if the code should run again or not
-            return false;
+            string answer = Console.ReadLine().ToLower();
+            if (answer.Equals("y") || answer.Equals("yes"))
+                return true;
+            else 
+                return false;
         }
         private void Introduce()
         {
@@ -38,7 +48,36 @@ namespace Assignment2
         }
         private void PredictMyDay()
         {
-
+            Console.WriteLine("\n\n ****** FORTUNE TELLER ****** ");
+            Console.Write("Select a number between 1 and 7: ");
+            string answer = Console.ReadLine();
+            switch(answer)
+            {
+                case "1":
+                    Console.WriteLine("Keep calm on Mondays! You can fall apart!");
+                    break;
+                case "2":
+                    Console.WriteLine("Tuesdays and Wednesdays break your heart");
+                    break;
+                case "3":
+                    Console.WriteLine("Tuesdays and Wednesdays break your heart");
+                    break;
+                case "4":
+                    Console.WriteLine("Thursday is your lucky day, don't wait for Friday");
+                    break;
+                case "5":
+                    Console.WriteLine("Friday, you are in love");
+                    break;
+                case "6":
+                    Console.WriteLine("Saturday, do nothing and do plenty of it!");
+                    break;
+                case "7":
+                    Console.WriteLine("And Sunday always comes too soon");
+                    break;
+                default:
+                    Console.WriteLine("No day? is a good day but it doesn't exist!");
+                    break;
+            }
         }
         private void CalculateStrengthLength()
         {
