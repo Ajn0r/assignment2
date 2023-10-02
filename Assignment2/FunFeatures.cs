@@ -18,9 +18,11 @@ namespace Assignment2
             Introduce();
             do
             {
+                // Call the day prediction method
                 PredictMyDay();
 
-                //CalculateStrengthLength();
+                // Start the string length calculating method
+                CalculateStrengthLength();
                 
                 // Check if user want to play again
                 repeat = RunAgain();
@@ -28,7 +30,7 @@ namespace Assignment2
         }
         private bool RunAgain()
         {
-            Console.Write("Continue with another round? (y/n): ");
+            Console.Write("\nContinue with another round? (y/n): ");
             // Method to decide if the code should run again or not
             string answer = Console.ReadLine().ToLower();
             if (answer.Equals("y") || answer.Equals("yes"))
@@ -46,12 +48,27 @@ namespace Assignment2
             Console.WriteLine("\nNice to meet you " + name);
             Console.WriteLine("Your email is " + email);
         }
+        private void ReadEmail()
+        {
+            // Read the email from the user
+            Console.Write("Your email please: ");
+            email = Console.ReadLine();
+        }
+        private void ReadName()
+        {
+            // Read the name from the user
+            Console.Write("Your first name please: ");
+            string firstName = Console.ReadLine();
+            Console.Write("Your last name please: ");
+            string lastName = Console.ReadLine().ToUpper();
+            name = lastName + ", " + firstName;
+        }
         private void PredictMyDay()
         {
             Console.WriteLine("\n\n ****** FORTUNE TELLER ****** ");
             Console.Write("Select a number between 1 and 7: ");
-            string answer = Console.ReadLine();
-            switch(answer)
+            string selectedDay = Console.ReadLine();
+            switch(selectedDay)
             {
                 case "1":
                     Console.WriteLine("Keep calm on Mondays! You can fall apart!");
@@ -81,22 +98,12 @@ namespace Assignment2
         }
         private void CalculateStrengthLength()
         {
-
-        }
-        private void ReadEmail()
-        {
-            // Read the email from the user
-            Console.Write("Your email please: ");
-            email = Console.ReadLine();
-        }
-        private void ReadName()
-        {
-            // Read the name from the user
-            Console.Write("Your first name please: ");
-            string firstName = Console.ReadLine();
-            Console.Write("Your last name please: ");
-            string lastName = Console.ReadLine().ToUpper();
-            name = lastName + ", " + firstName;
+            Console.WriteLine("\n\n ---- STRENGHT LENGTH ---- ");
+            Console.WriteLine("Write a text with any number of characters and press Enter.\n" +
+                "You can even copy a text from a file and paste it here!");
+            string textInput = Console.ReadLine().ToUpper();
+            Console.WriteLine("\n" + textInput);
+            Console.WriteLine("Number of characters: " + textInput.Length);
         }
     }
 }
