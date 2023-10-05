@@ -13,7 +13,7 @@ namespace Assignment2
 
         public void Start()
         {
-            bool repeat = false;
+            bool repeat;
             // Welcome the player and get some user information
             Introduce();
             do
@@ -68,14 +68,13 @@ namespace Assignment2
             Console.WriteLine("\n\n ****** FORTUNE TELLER ****** ");
             Console.Write("Select a number between 1 and 7: ");
             string selectedDay = Console.ReadLine();
+            // switch selection based on the number that the user enters.
             switch(selectedDay)
             {
                 case "1":
                     Console.WriteLine("Keep calm on Mondays! You can fall apart!");
                     break;
                 case "2":
-                    Console.WriteLine("Tuesdays and Wednesdays break your heart");
-                    break;
                 case "3":
                     Console.WriteLine("Tuesdays and Wednesdays break your heart");
                     break;
@@ -101,8 +100,10 @@ namespace Assignment2
             Console.WriteLine("\n\n ---- STRENGHT LENGTH ---- ");
             Console.WriteLine("Write a text with any number of characters and press Enter.\n" +
                 "You can even copy a text from a file and paste it here!");
+            // reads the text from the user and transform it to uppercase
             string textInput = Console.ReadLine().ToUpper();
             Console.WriteLine("\n" + textInput);
+            // prints the number of characters in the text with .Length.
             Console.WriteLine("Number of characters: " + textInput.Length);
         }
     }
