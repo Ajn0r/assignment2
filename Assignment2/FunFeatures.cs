@@ -13,9 +13,10 @@ namespace Assignment2
 
         public void Start()
         {
-            bool repeat;
             // Welcome the player and get some user information
             Introduce();
+
+            // do/while loop to continue playing until RunAgain method returns false
             do
             {
                 // Call the day prediction method
@@ -23,10 +24,8 @@ namespace Assignment2
 
                 // Start the string length calculating method
                 CalculateStrengthLength();
-                
-                // Check if user want to play again
-                repeat = RunAgain();
-            } while (repeat);
+
+            } while (RunAgain());
         }
         private bool RunAgain()
         {

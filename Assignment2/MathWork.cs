@@ -40,7 +40,7 @@ namespace Assignment2
             {
                 bool numCheck1 = false;
                 bool numCheck2 = false;
-                Console.WriteLine("Select any two positive numbers");
+                Console.WriteLine("\nSelect any two positive numbers");
                 // A do while loop to validate the number input
                 do
                 {
@@ -65,7 +65,7 @@ namespace Assignment2
                 }
 
                 int sum = SumNumbers(startNum, endNum);
-                Console.WriteLine(string.Format("The sum of the numbers between {0} and {1} is {2}", startNum, endNum, sum));
+                Console.WriteLine(string.Format("\nThe sum of the numbers between {0} and {1} is {2}\n", startNum, endNum, sum));
 
                 // Call to print all even numbers
                 PrintEvenNumbers(startNum, endNum);

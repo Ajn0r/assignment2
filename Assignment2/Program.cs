@@ -6,24 +6,36 @@ class Program
         Console.Clear();
         Console.Title = "Stringsm selection and iteration in C#";
         FunFeatures funObj = new FunFeatures();
-        //funObj.Start();
+        funObj.Start();
 
-        //ContinueToNextPart();
+        ContinueToNextPart();
 
         // Start MathWork
         Console.Title = "Let's work with numbers!";
         MathWork calc = new MathWork();
-        //calc.Start();
+        calc.Start();
+
+        ContinueToNextPart();
 
         // Start Temp converter
         Console.Title = "Temperature Converter";
         TemperatureConverter tempCon = new TemperatureConverter();
         tempCon.Start();
+
+        ContinueToNextPart();
+
+        // Start working schedule
+        Console.Title = "Working Schedule";
+        WorkingSchedule schedule = new WorkingSchedule();
+        schedule.Start();
     }
 
 
     private static void ContinueToNextPart()
     {
-        throw new NotImplementedException();
+        Console.WriteLine("\nPress enter to continue to the next part");
+        Console.ReadLine();
+        Console.Clear();
+
     }
 }
